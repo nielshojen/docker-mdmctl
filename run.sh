@@ -26,7 +26,7 @@ fi
 echo "Connecting using: $execServe"
 eval $execServe
 
-fi
-
+echo "Select config using: $execSwitch"
+eval $execSwitch
 
 sleep infinity
