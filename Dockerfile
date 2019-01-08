@@ -8,5 +8,4 @@ RUN apk --no-cache add curl && \
     mv /build/linux/mdmctl / && \
     rm -r /build && \
     chmod a+x /mdmctl && \
-    apk del curl && \
-    mkdir /config /certs /repo && \
+    apk del curl
