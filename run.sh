@@ -29,4 +29,4 @@ eval $execServe
 echo "Select config using: $execSwitch"
 eval $execSwitch
 
-sleep infinity
+sleep 3600
