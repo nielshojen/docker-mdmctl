@@ -23,8 +23,8 @@ else
   execConnect="${execConnect} -server-url https://micromdm.example.com"
 fi
 
-echo "Connecting using: $execServe"
-eval $execServe
+echo "Connecting using: $execConnect"
+eval $execConnect
 
 echo "Select config using: $execSwitch"
 eval $execSwitch
