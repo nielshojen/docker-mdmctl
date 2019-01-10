@@ -5,10 +5,10 @@ execConnect="/mdmctl config"
 # add api key if specified
 if [[ ${CONFIG_NAME} ]]; then
   execConnect="${execConnect} -name ${CONFIG_NAME}"
-  execSwitch="mdmctl config switch -name ${CONFIG_NAME}"
+  execSwitch="/mdmctl config switch -name ${CONFIG_NAME}"
 else
   execConnect="${execConnect} -name production"
-  execSwitch="mdmctl config switch -name production"
+  execSwitch="/mdmctl config switch -name production"
 fi
 
 if [[ ${API_KEY} = true ]]; then
