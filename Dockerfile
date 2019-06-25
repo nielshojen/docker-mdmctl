@@ -4,7 +4,7 @@ ENV MICROMDM_VERSION=1.5.0
 
 COPY run.sh /run.sh
 
-RUN RUN apk --no-cache add curl && \
+RUN apk --no-cache add curl && \
     curl -L https://github.com/micromdm/micromdm/releases/download/v${MICROMDM_VERSION}/micromdm_${MICROMDM_VERSION}.zip -o /micromdm.zip && \
     unzip /micromdm.zip && \
     mv /build/linux/mdmctl / && \
