@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM ubuntu:bionic
 
 ENV MICROMDM_VERSION=1.4.0
 
