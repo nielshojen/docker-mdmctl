@@ -11,7 +11,7 @@ else
   execSwitch="/mdmctl config switch -name production"
 fi
 
-if [[ ${API_KEY} = true ]]; then
+if [[ ${API_KEY} ]]; then
   execConnect="${execConnect} -api-token ${API_KEY}"
 else
   execConnect="${execConnect} -api-token NONE"
