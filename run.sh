@@ -34,4 +34,4 @@ if [[ ${APNS_CERT} ]] && [[ ${APNS_CERT_PASS} ]] && [[ ${APNS_CERT_PASS} ]]; the
   eval $execUpload
 fi
 
-sleep infinity
+sleep 3600
