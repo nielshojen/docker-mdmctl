@@ -1,6 +1,6 @@
 #!/bin/sh
 
-execConnect="/mdmctl config"
+execConnect="/mdmctl config set"
 
 # add api key if specified
 if [[ ${CONFIG_NAME} ]]; then
