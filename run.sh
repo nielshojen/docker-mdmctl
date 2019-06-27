@@ -29,7 +29,7 @@ echo "Select config using: $execSwitch"
 eval $execSwitch
 
 if [[ ${APNS_CERT} ]] && [[ ${APNS_CERT_PASS} ]] && [[ ${APNS_CERT_PASS} ]]; then
-  execUpload="mdmctl mdmcert upload -cert ${APNS_CERT} -private-key ${APNS_CERT_KEY} -password=${APNS_CERT_PASS}"
+  execUpload="/mdmctl mdmcert upload -cert ${APNS_CERT} -private-key ${APNS_CERT_KEY} -password=${APNS_CERT_PASS}"
   echo "Uploading APNS Cert"
   eval $execUpload
 fi
