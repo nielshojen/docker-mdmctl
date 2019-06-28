@@ -2,7 +2,6 @@
 
 execConnect="/mdmctl config set"
 
-# add api key if specified
 if [[ ${CONFIG_NAME} ]]; then
   execConnect="${execConnect} -name ${CONFIG_NAME}"
   execSwitch="/mdmctl config switch -name ${CONFIG_NAME}"
@@ -28,5 +27,11 @@ eval $execConnect
 
 echo "Select config using: $execSwitch"
 eval $execSwitch
+
+if [[ ${APNS_CERT} ]] && [[ ${APNS_CERT_PASS} ]] && [[ ${APNS_CERT_PASS} ]]; then
+  execUpload="/mdmctl mdmcert upload -cert ${APNS_CERT} -private-key ${APNS_CERT_KEY} -password=${APNS_CERT_PASS}"
+  echo "Uploading APNS Cert"
+  eval $execUpload
+fi
 
 sleep 3600
