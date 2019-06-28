@@ -1,14 +1,16 @@
 #!/bin/sh
 
-execConnect="/mdmctl config set"
+trap : TERM INT
+
+execConnect="/usr/local/bin/mdmctl config set"
 
 # add api key if specified
 if [[ ${CONFIG_NAME} ]]; then
   execConnect="${execConnect} -name ${CONFIG_NAME}"
-  execSwitch="/mdmctl config switch -name ${CONFIG_NAME}"
+  execSwitch="/usr/local/bin/mdmctl config switch -name ${CONFIG_NAME}"
 else
   execConnect="${execConnect} -name production"
-  execSwitch="/mdmctl config switch -name production"
+  execSwitch="/usr/local/bin/mdmctl config switch -name production"
 fi
 
 if [[ ${API_KEY} ]]; then
@@ -29,4 +31,4 @@ eval $execConnect
 echo "Select config using: $execSwitch"
 eval $execSwitch
 
-sleep 3600
+tail -f /dev/null & wait
